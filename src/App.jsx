@@ -78,38 +78,76 @@ export default function App() {
 
 <div style={{ marginBottom: 12 }}>
   <label>Water Weight (grams)</label><br />
-  <input
-    value={waterWeight}
-    onChange={e => setWaterWeight(e.target.value)}
-    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
-  />
+<input
+  type="number"
+  inputMode="decimal"
+  step="0.1"
+  value={waterWeight}
+  onChange={e => setWaterWeight(e.target.value)}
+  onFocus={e => e.target.select()}
+  style={{
+    textAlign: "center",
+    fontSize: "18px",
+    padding: "8px",
+    width: "100%",
+  }}
+/>
+
 </div>
 
 <div style={{ marginBottom: 12 }}>
   <label>Fragrance Load (%)</label><br />
-  <input
-    value={fragrancePercent}
-    onChange={e => setFragrancePercent(e.target.value)}
-    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
-  />
+<input
+  type="number"
+  inputMode="decimal"
+  step="0.1"
+  value={fragrancePercent}
+  onChange={e => setFragrancePercent(e.target.value)}
+  onFocus={e => e.target.select()}
+  style={{
+    textAlign: "center",
+    fontSize: "18px",
+    padding: "8px",
+    width: "100%",
+  }}
+/>
+
 </div>
 
 <div style={{ marginBottom: 12 }}>
   <label>Number of Candles</label><br />
-  <input
-    value={batchCount}
-    onChange={e => setBatchCount(Number(e.target.value))}
-    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
-  />
+<input
+  type="number"
+  inputMode="numeric"
+  step="1"
+  value={batchCount}
+  onChange={e => setBatchCount(Number(e.target.value))}
+  onFocus={e => e.target.select()}
+  style={{
+    textAlign: "center",
+    fontSize: "18px",
+    padding: "8px",
+    width: "100%",
+  }}
+/>
 </div>
 
 <div style={{ marginBottom: 12 }}>
   <label>Jar Diameter (inches)</label><br />
-  <input
-    value={jarDiameter}
-    onChange={e => setJarDiameter(e.target.value)}
-    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
-  />
+<input
+  type="number"
+  inputMode="decimal"
+  step="0.1"
+  value={jarDiameter}
+  onChange={e => setJarDiameter(e.target.value)}
+  onFocus={e => e.target.select()}
+  style={{
+    textAlign: "center",
+    fontSize: "18px",
+    padding: "8px",
+    width: "100%",
+  }}
+/>
 </div>
 
 <div style={{ marginBottom: 12 }}>
