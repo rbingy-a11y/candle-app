@@ -73,7 +73,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ maxWidth: 500, margin: "20px auto", fontFamily: "sans-serif" }}>
+    <div style={{ maxWidth: 500, margin: "20px auto", fontFamily: "sans-serif",  fontSize: "18px", }}>
       <h2>🕯️ Candle Wax Calculator (Soy)</h2>
 
 <div style={{ marginBottom: 12 }}>
@@ -81,7 +81,7 @@ export default function App() {
   <input
     value={waterWeight}
     onChange={e => setWaterWeight(e.target.value)}
-    style={{ textAlign: "center" }}
+    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
   />
 </div>
 
@@ -90,7 +90,7 @@ export default function App() {
   <input
     value={fragrancePercent}
     onChange={e => setFragrancePercent(e.target.value)}
-    style={{ textAlign: "center" }}
+    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
   />
 </div>
 
@@ -99,7 +99,7 @@ export default function App() {
   <input
     value={batchCount}
     onChange={e => setBatchCount(Number(e.target.value))}
-    style={{ textAlign: "center" }}
+    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
   />
 </div>
 
@@ -108,7 +108,7 @@ export default function App() {
   <input
     value={jarDiameter}
     onChange={e => setJarDiameter(e.target.value)}
-    style={{ textAlign: "center" }}
+    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
   />
 </div>
 
@@ -117,6 +117,7 @@ export default function App() {
   <select
     value={wickType}
     onChange={e => setWickType(e.target.value)}
+    style={{ textAlign: "center", fontSize: "18px", padding: "8px", width: "100%", }}
   >
     <option>ECO</option>
     <option>CD</option>
@@ -126,8 +127,25 @@ export default function App() {
 </div>
 
 <div style={{ marginTop: 20 }}>
-  <button onClick={calculate}>Calculate</button>
-  <button onClick={reset} style={{ marginLeft: 10 }}>Reset</button>
+  <button
+  onClick={calculate}
+  style={{
+    fontSize: "18px",
+    padding: "12px 20px",
+  }}
+>
+  Calculate
+</button>
+  <button
+  onClick={reset}
+  style={{
+    fontSize: "18px",
+    padding: "12px 20px",
+    marginLeft: "10px",
+  }}
+>
+  Reset
+</button>
 </div>
 
 {result && (
