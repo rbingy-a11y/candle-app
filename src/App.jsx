@@ -262,6 +262,7 @@ export default function App() {
       background: "#fff",
       zIndex: 1000,
       padding: 20,
+      overflowY: "auto",
     }}
   >
 <button onClick={() => setJournalOpen(false)}>
