@@ -13,7 +13,7 @@ export default function App() {
   const [waxType, setWaxType] = useState("");
   const [waxManufacturer, setWaxManufacturer] = useState("");
   const [meltPoint, setMeltPoint] = useState("");
-  const [fragrancePercentUsed, setFragrance] = useState("");
+  const [fragrancePercentUsed, setFragrancePercentUsed] = useState("");
   const [fragranceBrand, setFragranceBrand] = useState("");
   const [fragranceScent, setFragranceScent] = useState("");
   const [fragranceTempAdded, setFragranceTempAdded] = useState("");
@@ -103,9 +103,13 @@ export default function App() {
     notes,
   };
 
-  const updated = [newEntry, ...journalEntries];
-  setJournalEntries(updated);
+
+setJournalEntries(prevEntries => {
+  const updated = [newEntry, ...prevEntries];
   localStorage.setItem("journalEntries", JSON.stringify(updated));
+  return updated;
+});
+
 
   // reset form
   setWaxType("");
@@ -285,7 +289,24 @@ export default function App() {
       ➕ New Batch
     </button>
 
-    <p>No batches yet.</p>
+    {journalEntries.length === 0 && <p>No batches yet.</p>}
+
+{journalEntries.map(entry => (
+  <div
+    key={entry.id}
+    style={{
+      border: "1px solid #ccc",
+      borderRadius: 8,
+      padding: 12,
+      marginBottom: 12,
+    }}
+  >
+    <strong>{entry.date}</strong>
+    <div>
+      {entry.fragranceScent || "Unnamed batch"} • {entry.wickUsed}
+    </div>
+  </div>
+))}
   </>
 )}
 
@@ -412,6 +433,7 @@ export default function App() {
   }}
 />
 <button
+  type="button"
   onClick={saveBatch}
   style={{
     fontSize: "18px",
